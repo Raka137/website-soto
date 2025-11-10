@@ -30,14 +30,17 @@ function NavbarComponent() {
             <Nav.Link as={Link} to="/gallery">
               Galeri
             </Nav.Link>
-            <Nav.Link as={Link} to="/services">
+            
+            {/* ===== INI BARIS YANG DIPERBAIKI ===== */}
+            <Nav.Link as={Link} to="/menu">
               Menu
             </Nav.Link>
+            {/* ==================================== */}
+
             <Nav.Link as={Link} to="/faq">
               FAQ
             </Nav.Link>
 
-            {/* ===== INI BAGIAN YANG DIUBAH ===== */}
             <Button
               className="btn-cta ms-lg-3 mt-2 mt-lg-0"
               href={whatsappURL}
@@ -54,7 +57,6 @@ function NavbarComponent() {
               >
                   Pesan via GoFood
               </Button>  
-            {/* ===== AKHIR BAGIAN YANG DIUBAH ===== */}
           </Nav>
         </Navbar.Collapse>
       </Container>
