@@ -1,0 +1,490 @@
+/* Import Google Fonts (Lobster untuk judul, Poppins untuk body) */
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;700&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Variabel Warna & Font baru sesuai tema Soto Betawi */
+:root {
+  --primary-font: "Poppins", sans-serif;
+  --heading-font: "Lobster", cursive;
+  --primary-color: #b93623; /* Merah Marun dari gambar */
+  --secondary-color: #f5a623; /* Oranye/Kuning dari kuah soto */
+  --light-color: #fff8e1; /* Krem/Putih Gading */
+  --dark-color: #4a2c2a; /* Coklat Tua untuk teks */
+}
+
+/* Gaya Dasar Body */
+body {
+  font-family: var(--primary-font);
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Kustomisasi Navbar */
+.navbar-brand span {
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+}
+.navbar .nav-link {
+  font-weight: bold;
+  transition: color 0.2s ease;
+}
+.navbar .nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+
+/* Kustomisasi Tombol Utama (Call to Action) */
+.btn-cta {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--dark-color);
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px; /* Membuat tombol lebih bulat */
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.btn-cta:hover {
+  background-color: #e09920;
+  border-color: #e09920;
+  color: var(--dark-color);
+  transform: scale(1.05);
+}
+
+/* Styling untuk Kartu Layanan (Menu) Unggulan */
+.service-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 15px; /* Sudut lebih melengkung */
+}
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1) !important;
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+/* Bagian Testimoni dengan Latar Merah */
+.testimonials-section {
+  background-color: var(--primary-color);
+  color: var(--light-color);
+  padding: 5rem 0;
+}
+.testimonials-section small {
+  color: #fdeac7 !important;
+}
+
+/* Bagian Google Maps */
+.maps-section {
+  background-color: var(--light-color);
+  padding: 3rem 0;
+}
+
+.maps-section h2 {
+  font-family: var(--heading-font);
+  font-size: 3rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.maps-section iframe {
+  transition: transform 0.3s ease;
+  border-radius: 15px;
+}
+
+.maps-section iframe:hover {
+  transform: scale(1.01);
+}
+
+/* Responsive Google Maps */
+@media (max-width: 768px) {
+  .maps-section {
+    padding: 2rem 0;
+  }
+
+  .maps-section h2 {
+    font-size: 2rem !important;
+  }
+
+  .maps-section p {
+    font-size: 0.9rem !important;
+    padding: 0 1rem;
+  }
+
+  .maps-section .map-container {
+    height: 300px !important;
+  }
+
+  .maps-section .btn-cta {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .maps-section h2 {
+    font-size: 1.75rem !important;
+  }
+
+  .maps-section .map-container {
+    height: 250px !important;
+  }
+}
+
+/* ===== Bagian Animasi (Tetap Sama) ===== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hero-content-animation {
+  animation: fadeInUp 1s ease-out forwards;
+}
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.service-card .card-img-top {
+  border-top-left-radius: 15px; /* Sesuaikan dengan radius kartu */
+  border-top-right-radius: 15px;
+  object-fit: cover; /* Memastikan gambar mengisi area tanpa distorsi */
+  height: 200px; /* Beri tinggi yang seragam untuk semua gambar */
+}
+
+/* Styling untuk tombol pesan di halaman menu */
+.btn-pesan {
+  border-color: var(--secondary-color);
+  color: var(--dark-color);
+  background-color: transparent;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-pesan:hover {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--dark-color);
+  transform: scale(1.05);
+}
+
+/* Styling untuk Carousel di Menu Utama */
+.menu-carousel {
+  padding: 0 2rem;
+  margin-bottom: 3rem;
+}
+
+.menu-carousel .carousel-control-prev,
+.menu-carousel .carousel-control-next {
+  width: 50px;
+  height: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: none;
+}
+
+.menu-carousel .carousel-control-prev {
+  left: -30px;
+}
+
+.menu-carousel .carousel-control-next {
+  right: -30px;
+}
+
+.menu-carousel .carousel-control-prev:hover,
+.menu-carousel .carousel-control-next:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
+  background-color: var(--primary-color);
+}
+
+.menu-carousel .carousel-control-prev-icon,
+.menu-carousel .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+  filter: brightness(0) invert(1);
+}
+
+.menu-carousel .carousel-indicators {
+  position: relative;
+  bottom: 0;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  padding: 1rem 0;
+}
+
+.menu-carousel .carousel-indicators [data-bs-target] {
+  background-color: var(--primary-color);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  opacity: 0.5;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  border: none;
+  margin: 0 5px;
+}
+
+.menu-carousel .carousel-indicators [data-bs-target].active {
+  opacity: 1;
+  transform: scale(1.3);
+}
+
+.menu-carousel .carousel-item {
+  padding: 1rem 0;
+}
+
+/* Responsive untuk carousel */
+@media (max-width: 992px) {
+  .menu-carousel {
+    padding: 0 2rem;
+  }
+}
+
+/* ===== Mobile Responsive untuk Halaman Menu ===== */
+@media (max-width: 768px) {
+  /* Hero Section Mobile */
+  .menu-hero-section h1 {
+    font-size: 2.5rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .menu-hero-section p {
+    font-size: 1rem !important;
+    padding: 0 1rem;
+  }
+
+  .menu-hero-section {
+    padding: 3rem 0 !important;
+  }
+
+  /* Container Mobile */
+  .container.py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Judul Section Mobile */
+  .menu-section-title {
+    font-size: 2rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .menu-section-subtitle {
+    font-size: 0.9rem !important;
+    padding: 0 1rem;
+  }
+
+  .menu-section-header {
+    margin-bottom: 2rem !important;
+  }
+
+  /* Carousel Mobile */
+  .menu-carousel {
+    padding: 0 0.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .menu-carousel .carousel-control-prev,
+  .menu-carousel .carousel-control-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  .menu-carousel .carousel-control-prev {
+    left: 5px;
+  }
+
+  .menu-carousel .carousel-control-next {
+    right: 5px;
+  }
+
+  .menu-carousel .carousel-control-prev-icon,
+  .menu-carousel .carousel-control-next-icon {
+    width: 12px;
+    height: 12px;
+  }
+
+  .menu-carousel .carousel-indicators {
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 0;
+  }
+
+  .menu-carousel .carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    margin: 0 3px;
+  }
+
+  .menu-carousel .carousel-item {
+    padding: 0.5rem 0;
+  }
+
+  /* Card Mobile */
+  .service-card {
+    margin-bottom: 1rem;
+  }
+
+  /* Override inline styles untuk mobile - menggunakan selector yang lebih spesifik */
+  .menu-carousel .service-card .card-img-top,
+  .menu-carousel .service-card img {
+    height: 180px !important;
+    min-height: 180px !important;
+  }
+
+  .service-card .card-body {
+    padding: 1rem !important;
+  }
+
+  .service-card .card-title {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .service-card .card-text {
+    font-size: 0.8rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Badge Mobile */
+  .service-card .badge {
+    font-size: 0.7rem !important;
+    padding: 0.3rem 0.5rem !important;
+  }
+
+  /* Button Pesan Mobile */
+  .btn-pesan {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  /* Price Mobile */
+  .service-card .fw-bold {
+    font-size: 1rem !important;
+  }
+
+  /* Menu 2 Cards Mobile */
+  .menu-2-section .service-card .card-img-top,
+  .menu-2-section .service-card img {
+    height: 150px !important;
+    min-height: 150px !important;
+  }
+
+  /* CTA Section Mobile */
+  .menu-cta-section {
+    padding: 2rem 1rem !important;
+    margin-top: 2rem !important;
+    border-radius: 15px !important;
+  }
+
+  .menu-cta-section h3 {
+    font-size: 1.8rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .menu-cta-section p {
+    font-size: 0.95rem !important;
+    margin-bottom: 1.5rem !important;
+    padding: 0 0.5rem;
+  }
+
+  .menu-cta-section .btn-cta {
+    padding: 0.6rem 1.5rem !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 576px) {
+  /* Hero Section Extra Small */
+  .menu-hero-section h1 {
+    font-size: 2rem !important;
+  }
+
+  .menu-hero-section {
+    padding: 2rem 0 !important;
+  }
+
+  /* Judul Section Extra Small */
+  .menu-section-title {
+    font-size: 1.75rem !important;
+  }
+
+  /* Carousel Extra Small */
+  .menu-carousel {
+    padding: 0;
+  }
+
+  .menu-carousel .carousel-control-prev,
+  .menu-carousel .carousel-control-next {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-carousel .carousel-control-prev {
+    left: 0;
+  }
+
+  .menu-carousel .carousel-control-next {
+    right: 0;
+  }
+
+  /* Card Extra Small */
+  .menu-carousel .service-card .card-img-top,
+  .menu-carousel .service-card img {
+    height: 160px !important;
+    min-height: 160px !important;
+  }
+
+  .menu-2-section .service-card .card-img-top,
+  .menu-2-section .service-card img {
+    height: 140px !important;
+    min-height: 140px !important;
+  }
+
+  .service-card .card-body {
+    padding: 0.75rem !important;
+  }
+
+  /* CTA Extra Small */
+  .menu-cta-section {
+    padding: 1.5rem 0.75rem !important;
+  }
+
+  .menu-cta-section h3 {
+    font-size: 1.5rem !important;
+  }
+
+  .menu-cta-section .btn-cta {
+    width: 90%;
+    padding: 0.75rem 1rem !important;
+  }
+}
