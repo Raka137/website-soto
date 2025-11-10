@@ -6,6 +6,7 @@ function NavbarComponent() {
   // Nomor WhatsApp tujuan dalam format internasional tanpa '+' atau spasi
   const whatsappNumber = "628176812006";
   const whatsappURL = `https://wa.me/${whatsappNumber}`;
+  const goFoodURL = `https://gofood.link/a/K667dwL`;
 
   return (
     <Navbar
@@ -43,8 +44,16 @@ function NavbarComponent() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Pesan Online
+              Pesan via Whatsapp
             </Button>
+              <Button
+                  className="btn-cta ms-lg-3 mt-2 mt-lg-0"
+                  href={goFoodURL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+              >
+                  Pesan via GoFood
+              </Button>  
             {/* ===== AKHIR BAGIAN YANG DIUBAH ===== */}
           </Nav>
         </Navbar.Collapse>
